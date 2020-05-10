@@ -9,7 +9,7 @@ public class PrimsRandomVertixAlgorithm implements Algorithm<Graph, Graph> {
 	
 	public Graph execute(Graph graph) {
 		List<Vertix> vertices = graph.getVertices();
-		Integer rand = (int) Math.round(Math.random() * ( vertices.size() - 0));
+		Integer rand = (int) Math.floor(Math.random() * ( vertices.size() - 0));
 		Vertix vertix = vertices.get(rand);
 		return new PrimsAlgorithm(graph).execute(vertix);
 	}

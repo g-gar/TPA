@@ -2,6 +2,7 @@ package com.uem.ggar.tpa.graph;
 
 import com.uem.ggar.tpa.graph.algorithm.Algorithm;
 import com.uem.ggar.tpa.graph.algorithm.PrimsAlgorithm;
+import com.uem.ggar.tpa.graph.algorithm.PrimsRandomVertixAlgorithm;
 import com.uem.ggar.tpa.graph.model.Edge;
 import com.uem.ggar.tpa.graph.model.Graph;
 import com.uem.ggar.tpa.graph.model.Vertix;
@@ -24,7 +25,14 @@ public class PrimsAlgorithmTest {
 		graph.addEdge(new Edge(i, h, 7));
 		
 		Algorithm<Vertix, Graph> alg = new PrimsAlgorithm(graph);
-		Graph mst = alg.execute(a);
-		System.out.println(mst);
+//		Graph mst = alg.execute(a);
+//		System.out.println(mst);
+		
+		
+		Graph graph2 = new Graph();
+		
+		Algorithm<Graph, Graph> alg2 = new PrimsRandomVertixAlgorithm();
+		Graph mst2 = alg2.execute(graph);
+		System.out.println(mst2);
 	}
 }
