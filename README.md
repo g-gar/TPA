@@ -12,7 +12,7 @@
 
 	* Right click on TPA base Maven project
 	* Maven
-	* Click on `Update project` and select all related modules
+	* Click on `Update project` and select all related modules checkboxes
 		
 * Fix No 2
 
