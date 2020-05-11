@@ -8,6 +8,9 @@
 	<packaging>pom</packaging>
 	<modules>
 		<module>graph</module>
+		<module>base</module>
+		<module>practicas</module>
+		<module>trees</module>
 	</modules>
 
 	<properties>

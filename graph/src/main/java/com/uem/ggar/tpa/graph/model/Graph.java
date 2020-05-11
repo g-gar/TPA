@@ -5,6 +5,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.uem.ggar.tpa.base.model.BaseEntity;
+
 public class Graph extends BaseEntity {
 	private final List<Vertix> vertices;
 	private final List<Edge> edges;

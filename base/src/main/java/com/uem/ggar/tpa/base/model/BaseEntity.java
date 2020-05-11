@@ -1,4 +1,4 @@
-package com.uem.ggar.tpa.graph.model;
+package com.uem.ggar.tpa.base.model;
 
 import java.lang.reflect.Field;
 import java.util.HashMap;

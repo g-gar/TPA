@@ -2,6 +2,7 @@ package com.uem.ggar.tpa.graph.algorithm;
 
 import java.util.List;
 
+import com.uem.ggar.tpa.base.model.Algorithm;
 import com.uem.ggar.tpa.graph.model.Graph;
 import com.uem.ggar.tpa.graph.model.Vertix;
 

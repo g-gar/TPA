@@ -1,5 +1,7 @@
 package com.uem.ggar.tpa.graph.model;
 
+import com.uem.ggar.tpa.base.model.BaseEntity;
+
 public class Edge extends BaseEntity {
 
 	private final Vertix start;

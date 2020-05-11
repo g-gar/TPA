@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.uem.ggar.tpa.base.model.Algorithm;
 import com.uem.ggar.tpa.graph.model.Edge;
 import com.uem.ggar.tpa.graph.model.Graph;
 import com.uem.ggar.tpa.graph.model.Vertix;

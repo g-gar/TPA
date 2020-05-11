@@ -1,6 +1,6 @@
 package com.uem.ggar.tpa.graph;
 
-import com.uem.ggar.tpa.graph.algorithm.Algorithm;
+import com.uem.ggar.tpa.base.model.Algorithm;
 import com.uem.ggar.tpa.graph.algorithm.PrimsAlgorithm;
 import com.uem.ggar.tpa.graph.model.Edge;
 import com.uem.ggar.tpa.graph.model.Graph;
