@@ -9,8 +9,8 @@ public class AlgoritmoCambioMonedas extends AbstractVoraciousAlgorithm<Double, S
 	
 	private final Double total;
 
-	public AlgoritmoCambioMonedas(Stack<Double> monedas, Double total) {
-		super(monedas);
+	public AlgoritmoCambioMonedas(Stack<Double> elements, Double total) {
+		super(elements);
 		this.total = total;
 	}
 
@@ -36,7 +36,7 @@ public class AlgoritmoCambioMonedas extends AbstractVoraciousAlgorithm<Double, S
 		Stack<Double> monedas = new Stack<Double>();
 		Double temp = 0.0;
 		
-		for (Iterator<Double> it = this.elements.iterator(); it.hasNext();) {
+		for (Iterator<Double> it = elements.iterator(); it.hasNext();) {
 			Double moneda = it.next();
 			while ((temp + moneda) < this.total) {
 				temp += moneda;
@@ -47,4 +47,17 @@ public class AlgoritmoCambioMonedas extends AbstractVoraciousAlgorithm<Double, S
 		return monedas;
 	}
 
+	/**
+	 * Enable multiple execution of this method by creating a snapshot of elements and then restoring it
+	 */
+	@Override
+	public Stack<Double> execute() {
+		Stack<Double> elements = new Stack<Double>() {{
+			addAll(AlgoritmoCambioMonedas.this.elements);
+		}};
+		Stack<Double> solution = super.execute();
+		this.elements.removeAllElements();
+		this.elements.addAll(elements);
+		return solution;
+	}
 }
