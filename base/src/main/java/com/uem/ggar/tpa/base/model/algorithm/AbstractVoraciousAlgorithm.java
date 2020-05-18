@@ -1,28 +1,20 @@
 package com.uem.ggar.tpa.base.model.algorithm;
 
 import java.util.Collection;
+import java.util.Iterator;
+import java.util.function.Predicate;
 
 public abstract class AbstractVoraciousAlgorithm<T, R extends Collection<T>> implements VoraciousAlgorithm<T,R> {
-	
-	protected final R elements;
-	
-	public AbstractVoraciousAlgorithm(R elements) {
-		this.elements = elements;
-	}
 
 	@Override
-	public R execute() {
+	public R execute(R elements, Predicate<T> fn) {
 		R solution = null, tempSolution = null;
-		T currentElement = null;
-
-		while (!elements.isEmpty() && !this.isValidSolution(solution) && ( currentElement = this.next(elements) ) != null) {
-			
-			if (this.isValidSolution( (tempSolution = this.execute(currentElement)) )) {
+		Iterator<T> it = elements.iterator();
+		while (it.hasNext() && solution == null) {
+			if (( tempSolution = this.generateSolutionForElement(elements, it.next(), fn) ) != null) {
 				solution = tempSolution;
- 			}
-			
+			}
 		}
-		
 		return solution;
 	}
 	

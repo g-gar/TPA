@@ -20,9 +20,9 @@ public class AlgoritmoCambioMonedaTest {
 				add(0.01);
 			}
 		});
-		Double cambio = 5.89;
-		AlgoritmoCambioMonedas alg = new AlgoritmoCambioMonedas(monedas, cambio);
-		System.out.println(alg.execute());
+		AlgoritmoCambioMonedas alg = new AlgoritmoCambioMonedas();
+		System.out.println(alg.execute(monedas, e -> e < 5.89));
+		System.out.println(alg.execute(monedas, e -> e < 5.88));
 	}
 
 }

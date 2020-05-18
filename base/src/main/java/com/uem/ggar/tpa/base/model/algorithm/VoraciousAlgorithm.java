@@ -1,11 +1,11 @@
 package com.uem.ggar.tpa.base.model.algorithm;
 
-public interface VoraciousAlgorithm<T,R> {
+import java.util.function.Predicate;
 
-	boolean isValidSolution(R solution);
+public interface VoraciousAlgorithm<T,R> {
 	
-	T next(R elements);
+	R generateSolutionForElement(R elements, T element, Predicate<T> checkFunction);
 	
-	R execute(T element);
-	R execute();
+	R execute(R elements, Predicate<T> checkFunction);
+	
 }
